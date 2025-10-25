@@ -25,8 +25,6 @@ type Config struct {
 }
 
 func Load() Config {
-    // Centralização total no .env: todas as variáveis devem existir no ambiente.
-    // Para aceitar valores vazios (ex.: REDIS_PASSWORD=""), usamos LookupEnv.
     mustLookup := func(key string) string {
         v, ok := os.LookupEnv(key)
         if !ok {
